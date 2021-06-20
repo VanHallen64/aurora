@@ -1,0 +1,45 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "FRfKRwSa8VLBq4tIq/DvOxLJ+0c=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "http://localhost:3030",
+      "issuer": "https://dev-5unyqz7w.us.auth0.com/",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "oauth": {
+      "redirect": "http://localhost:3000",
+      "auth0": {
+        "key": "DUXHkFTVxQkKnw0gJMSNr0NNlxSQUr9r",
+        "secret": "LuWXUoP11ESCMFFjnAoX-dEGW-7sbTNP6L5aTr_aO0l7bGtFm7awcnPdWJ3Zn_dJ",
+        "subdomain": "dev-5unyqz7w.us",
+        "scope": [
+          "openid",
+          "profile",
+          "email"
+        ]
+      }
+    }
+  },
+  "mongodb": "mongodb+srv://allen64:eWvhcunL03Z4d6i1@cluster0.teory.mongodb.net/aurora-db?retryWrites=true&w=majority"
+}
