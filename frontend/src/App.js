@@ -26,7 +26,7 @@ function App() {
 
 	if (loginState === undefined) {
 		return <h1>Loading...</h1>
-	} else if (loginState) {
+	} else if (loginState) { // If user is logged in
 		return (
 			<Router>
 				<div className="App">
@@ -44,7 +44,7 @@ function App() {
 			</Router>
 		);
 	}
-	return <div><Home/><a id="login-button" href="http://localhost:3030/oauth/auth0" role="button">Log In</a></div>;
+	return <a id="login-button" href="http://localhost:3030/oauth/auth0" role="button">Log In</a>;
 }
 
 export default App;

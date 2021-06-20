@@ -9,7 +9,7 @@ const Profile = () => {
       user = results[0];
     });
   }
-  console.log(client.authentication);
+  
   return (
     
       <div>

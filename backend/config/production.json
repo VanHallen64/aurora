@@ -1,4 +1,5 @@
 {
-  "host": "backend-app.feathersjs.com",
-  "port": "PORT"
+  "host": "HOST",
+  "port": "PORT",
+  "mongodb": "DATABASE_URI"
 }
