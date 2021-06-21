@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import client from '../feathers';
 import * as settings from '../settings.json';
 
-class Logout extends Component {
+class LogoutButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,7 +11,7 @@ class Logout extends Component {
         this.logOut = this.logOut.bind(this);
     }
     logOut() {
-        client.logout().then(console.log(client.get('authentication')));
+        client.logout();
         window.location.href = this.state.url;
     }
     render() {
@@ -19,4 +19,4 @@ class Logout extends Component {
     }
 }
  
-export default Logout;
+export default LogoutButton;

@@ -1,5 +1,4 @@
 {
-    "AUTH0_CLIENT_ID":"whVsI27UTmyIB5TTvz9eOXMKnWWEd5OD",
     "HOST":"http://localhost:3030",
     "LOGOUT_URL":"https://dev-5unyqz7w.us.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:3000/&client_id=whVsI27UTmyIB5TTvz9eOXMKnWWEd5OD"
 }

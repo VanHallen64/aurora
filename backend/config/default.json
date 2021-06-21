@@ -30,8 +30,8 @@
     "oauth": {
       "redirect": "http://localhost:3000",
       "auth0": {
-        "key": "DUXHkFTVxQkKnw0gJMSNr0NNlxSQUr9r",
-        "secret": "LuWXUoP11ESCMFFjnAoX-dEGW-7sbTNP6L5aTr_aO0l7bGtFm7awcnPdWJ3Zn_dJ",
+        "key": "whVsI27UTmyIB5TTvz9eOXMKnWWEd5OD",
+        "secret": "jwFYg35PXtrArm7Db0c1IqfB-3y8J0sNYmdTcXwZ7Mzs52WKDJ86eMC1kYu11GDv",
         "subdomain": "dev-5unyqz7w.us",
         "scope": [
           "openid",

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
 
-class Login extends Component {
+class LoginButton extends Component {
   render() { 
     return ( 
       <a id="login-button" href="http://localhost:3030/oauth/auth0" role="button">Log In</a>
@@ -9,4 +8,4 @@ class Login extends Component {
   }
 }
  
-export default Login;
+export default LoginButton;
