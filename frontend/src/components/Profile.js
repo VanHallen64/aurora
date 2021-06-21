@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import client from './feathers';
+import client from '../feathers';
 
 const users = client.service('users');
 let user = "";

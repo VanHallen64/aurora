@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import client from './feathers';
-import * as settings from './settings.json';
+import client from '../feathers';
+import * as settings from '../settings.json';
 
 class Logout extends Component {
     constructor(props) {

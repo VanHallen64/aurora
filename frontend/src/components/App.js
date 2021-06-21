@@ -1,14 +1,14 @@
-import './App.css';
-import Logout from './Logout'
-import Home from './Home';
 import React, { useState, useEffect } from 'react';
-import client from './feathers';
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
 	NavLink,
 } from "react-router-dom";
+import client from '../feathers';
+import Logout from './Logout';
+import Home from './Home';
+import Login from './Login';
 
 function App() {
 	const [loginState, setLogin] = useState(undefined);
@@ -44,7 +44,7 @@ function App() {
 			</Router>
 		);
 	}
-	return <a id="login-button" href="http://localhost:3030/oauth/auth0" role="button">Log In</a>;
+	return <Login/>;
 }
 
 export default App;

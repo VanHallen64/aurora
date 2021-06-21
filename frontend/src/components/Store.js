@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import client from './feathers';
+import client from '../feathers';
 
 class Store extends Component {
     constructor(props) {
