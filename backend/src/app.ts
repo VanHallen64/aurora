@@ -40,10 +40,12 @@ app.use('/', express.static(app.get('public')));
 
 // Set up Plugins and providers
 app.configure(express.rest());
+app.configure(mongoose);
 
 
 // Configure other middleware (see `middleware/index.ts`)
 app.configure(middleware);
+app.configure(authentication);
 // Set up our services (see `services/index.ts`)
 app.configure(services);
 // Set up event channels (see channels.ts)
