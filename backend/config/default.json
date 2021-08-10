@@ -1,7 +1,7 @@
 {
   "host": "localhost",
   "port": 3030,
-  "public": "../public",
+  "public": "../public/",
   "paginate": {
     "default": 10,
     "max": 50
@@ -9,7 +9,7 @@
   "authentication": {
     "entity": "user",
     "service": "users",
-    "secret": "FRfKRwSa8VLBq4tIq/DvOxLJ+0c=",
+    "secret": "93Iz+PJrpNc4ujDNGseLIuz06pw=",
     "authStrategies": [
       "jwt",
       "local"
@@ -18,28 +18,14 @@
       "header": {
         "typ": "access"
       },
-      "audience": "http://localhost:3030",
-      "issuer": "https://dev-5unyqz7w.us.auth0.com/",
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
       "algorithm": "HS256",
       "expiresIn": "1d"
     },
     "local": {
       "usernameField": "email",
       "passwordField": "password"
-    },
-    "oauth": {
-      "redirect": "http://localhost:3000",
-      "auth0": {
-        "key": "whVsI27UTmyIB5TTvz9eOXMKnWWEd5OD",
-        "secret": "jwFYg35PXtrArm7Db0c1IqfB-3y8J0sNYmdTcXwZ7Mzs52WKDJ86eMC1kYu11GDv",
-        "subdomain": "dev-5unyqz7w.us",
-        "scope": [
-          "openid",
-          "profile",
-          "email"
-        ]
-      }
     }
-  },
-  "mongodb": "mongodb+srv://allen64:eWvhcunL03Z4d6i1@cluster0.teory.mongodb.net/aurora-db?retryWrites=true&w=majority"
+  }
 }
