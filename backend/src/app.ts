@@ -42,7 +42,6 @@ app.use('/', express.static(app.get('public')));
 app.configure(express.rest());
 
 
-
 app.configure(mongoose);
 
 
