@@ -1,41 +1,49 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import client from "../feathers";
+import client from "../../feathers";
 
-class LoginButton extends Component {
+class SignUp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			email: "",
-			password: "",
-			name: "",
+			user: {
+				email: "",
+				password: "",
+				name: "",
+			},
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.register = this.register.bind(this);
 	}
 
 	handleSubmit(event) {
 		event.preventDefault();
-		this.register();
+		this.register(this.state.user);
 	}
 
-	register() {
-		const credentials = this.state;
-		// Try to authenticate using an existing token
-		client.reAuthenticate();
+	register(userData) {
+		const usersService = client.service("users");
+		usersService
+			.create(userData)
+			.then(() => {
+				console.log("User created");
+				this.authenticateUser(userData);
+			})
+			.catch((e) => console.log("Couldn't create user", e));
+	}
 
-		try {
-			// Otherwise log in with the `local` strategy using the credentials we got
-			client.authenticate({
+	authenticateUser(user) {
+		const { email, password } = user;
+		client
+			.authenticate({
 				strategy: "local",
-				...credentials,
-			});
-			// If successful, show the chat page
-			console.log("User Logged In");
-		} catch (error) {
-			// If we got an error, show the login page
-			console.log(error);
-		}
+				email,
+				password,
+			})
+			.then(() => {
+				console.log("User Logged In");
+				console.log(this.state);
+			})
+			.catch((e) => console.log(e));
 	}
 
 	render() {
@@ -55,7 +63,11 @@ class LoginButton extends Component {
 								aria-describedby="Enter email address"
 								placeholder="Enter email address"
 								value={this.state.email}
-								onChange={(e) => this.setState({ email: e.target.value })}
+								onChange={(e) => {
+									const user = { ...this.state.user };
+									user.email = e.target.value;
+									this.setState({ user });
+								}}
 							/>
 						</div>
 						<div className="form-group">
@@ -68,7 +80,11 @@ class LoginButton extends Component {
 								aria-describedby="Enter your name"
 								placeholder="Enter your name"
 								value={this.state.name}
-								onChange={(e) => this.setState({ name: e.target.value })}
+								onChange={(e) => {
+									const user = { ...this.state.user };
+									user.name = e.target.value;
+									this.setState({ user });
+								}}
 							/>
 						</div>
 						<div className="form-group">
@@ -80,12 +96,16 @@ class LoginButton extends Component {
 								id="inputForPassword"
 								placeholder="Enter password"
 								value={this.state.password}
-								onChange={(e) => this.setState({ password: e.target.value })}
+								onChange={(e) => {
+									const user = { ...this.state.user };
+									user.password = e.target.value;
+									this.setState({ user });
+								}}
 							/>
 						</div>
 						<div className="d-flex align-items-center justify-content-center">
 							<button type="submit" className="btn btn-outline-primary">
-								Submit
+								Sign Up
 							</button>
 							<button className="btn btn-link">
 								<Link to="/">Cancel</Link>
@@ -98,4 +118,4 @@ class LoginButton extends Component {
 	}
 }
 
-export default LoginButton;
+export default SignUp;

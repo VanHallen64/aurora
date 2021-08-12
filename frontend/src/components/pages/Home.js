@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import client from "../feathers";
-import Profile from "./Profile";
+import client from "../../feathers";
 
 class Home extends Component {
 	render() {

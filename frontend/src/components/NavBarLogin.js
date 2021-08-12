@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import client from '../feathers';
-import LogoutButton from './LogoutButton';
-import LoginButton from './LoginButton';
+import React, { useState, useEffect } from "react";
+import client from "../feathers";
+import LogoutButton from "./LogoutButton";
+import LoginButton from "./pages/SignUp";
 
 function NavBarLogin() {
 	const [loginState, setLogin] = useState(null);
@@ -17,13 +17,12 @@ function NavBarLogin() {
 	// 	});
 	// });
 	if (loginState === undefined) {
-		return <h1>Loading...</h1>
-	} else if (loginState) { // If user is logged in
-		return (
-			<LogoutButton/>
-		);
+		return <h1>Loading...</h1>;
+	} else if (loginState) {
+		// If user is logged in
+		return <LogoutButton />;
 	}
-	return <LoginButton/>;
+	return <LoginButton />;
 }
- 
+
 export default NavBarLogin;
